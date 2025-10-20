@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-
+import Pokedex from "./components/Pokedex";
 import "./index.css"
+
+
+
 const App: React.FC = () => {
   const [view, setView] = useState("pokedex");
  
 
-  const handleInterface = (view) => {
+  const handleInterface = (view: string) => {
     setView(view);
   };
 
@@ -14,8 +17,12 @@ const App: React.FC = () => {
   return (
     <div>
 
-      {view === "pokedex" }
-      {view === "details" }
+      {view === "pokedex" && (
+        <Pokedex />
+      )}
+      {/* {view === "details" && (
+        <PokemonDetails />
+      )} */}
     </div>
   );
 };
